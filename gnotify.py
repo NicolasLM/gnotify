@@ -156,6 +156,8 @@ def daemon():
     signal.signal(signal.SIGTERM, handle_sig)
     signal.signal(signal.SIGINT, handle_sig)
 
+    logger.info('Gnotify started')
+
     while not must_stop.is_set():
         try:
             check_dst_change()
